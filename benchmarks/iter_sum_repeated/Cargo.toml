@@ -1,0 +1,13 @@
+[package]
+name = "iter_sum_repeated"
+version = "0.1.0"
+
+[profile.dev]
+debug = false
+panic = "abort"
+
+[lib]
+name = "iter_sum_repeated"
+path = "src/lib.rs"
+
+[workspace]

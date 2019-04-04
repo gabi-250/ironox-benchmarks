@@ -1,0 +1,9 @@
+[package]
+name = "ret_struct"
+version = "0.1.0"
+
+[profile.dev]
+debug = false
+panic = "abort"
+
+[workspace]

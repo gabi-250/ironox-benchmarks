@@ -1,0 +1,12 @@
+\begin{{center}}
+  \begin{{tabular}}{{lrrrr}}
+  \toprule
+  \multicolumn{{1}}{{c}}{{\multirow{{2}}{{*}}{{Backend}}}}&\multicolumn{{4}}{{c}}{{Benchmark}}\\&\multicolumn{{1}}{{c}}{{\footnotesize fibonacci}}&\multicolumn{{1}}{{c}}{{\footnotesize iter\_sum}}&\multicolumn{{1}}{{c}}{{\footnotesize control\_flow}}&\multicolumn{{1}}{{c}}{{\footnotesize ret\_struct}}\\
+  \midrule
+    LLVM      &  {llvm_fibonacci}       &{llvm_iter_sum}      &{llvm_control_flow}      &{llvm_ret_struct}      \\
+    IronOx    &  {ironox_fibonacci}      &{ironox_iter_sum}    &{ironox_control_flow}    &{ironox_ret_struct}    \\
+    Cranelift &  {cranelift_fibonacci}   &{cranelift_iter_sum} &{cranelift_control_flow} &{cranelift_ret_struct} \\
+
+  \bottomrule
+  \end{{tabular}}
+\end{{center}}

@@ -1,0 +1,13 @@
+[package]
+name = "control_flow_repeated"
+version = "0.1.0"
+
+[profile.dev]
+debug = false
+panic = "abort"
+
+[lib]
+name = "control_flow_repeated"
+path = "src/lib.rs"
+
+[workspace]

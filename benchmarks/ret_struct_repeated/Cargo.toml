@@ -1,0 +1,13 @@
+[package]
+name = "ret_struct_repeated"
+version = "0.1.0"
+
+[profile.dev]
+debug = false
+panic = "abort"
+
+[lib]
+name = "ret_struct_repeated"
+path = "src/lib.rs"
+
+[workspace]
