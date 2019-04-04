@@ -41,7 +41,10 @@ def mean_sigma(env, proj, num_obs, bench_type):
                        stderr=subprocess.PIPE,
                        env=env)
     if p.returncode:
-        pass
+        print('Failed to run {cmd}'.format(cmd=cmd))
+        print('Output was:\n{}\n{}\nExiting...'.format(p.stdout, p.stderr),
+                file=sys.stderr)
+        sys.exit()
     else:
         output = p.stderr.decode()
         idx = output.find(RESULT_LINE)
@@ -83,7 +86,7 @@ if __name__ == '__main__':
                         required=True)
     parser.add_argument('--clif',
                         help='the path of the cranelift project',
-                        default='')
+                        required=True)
     parser.add_argument('-n', '--num-obs',
                         help='the number of times to run the benchmarks',
                         type=int,

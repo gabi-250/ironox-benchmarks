@@ -9,9 +9,9 @@ ifeq ($(RUST_BACKEND),ironox)
 	CARGO := $(RUST_ROOT)/build/x86_64-unknown-linux-gnu/stage0/bin/cargo
 else ifeq ($(RUST_BACKEND),cranelift)
 	CLIF_SO := librustc_codegen_cranelift.so
-	BACKEND := $(CLIF_DIR)/target/debug/$(CLIF_SO)
-	CLIF_FLAGS :=  --sysroot $(CLIF_DIR)/build_sysroot/sysroot
-	CARGO_FLAGS := +nightly
+	BACKEND := $(realpath $(CLIF_DIR)/target/debug/$(CLIF_SO))
+	CLIF_FLAGS :=  --sysroot $(realpath $(CLIF_DIR)/build_sysroot/sysroot)
+	CARGO_FLAGS := +nightly-2019-03-27
 	CARGO := cargo
 else ifeq ($(RUST_BACKEND),llvm)
 	LLVM_SO := librustc_codegen_llvm-llvm.so
