@@ -42,7 +42,7 @@ def mean_sigma(env, proj, num_obs, bench_type):
                        env=env)
     if p.returncode:
         print('Failed to run {cmd}'.format(cmd=cmd))
-        print('Output was:\n{}\n{}\nExiting...'.format(p.stdout, p.stderr),
+        print('Output was:\n{}\n{}\nExiting...'.format(p.stdout.decode("utf-8"), p.stderr.decode("utf-8")),
                 file=sys.stderr)
         sys.exit()
     else:
@@ -105,7 +105,7 @@ if __name__ == '__main__':
         print('Benchmarking the %s backend' % (backend))
         env = get_env(args.rust, args.multitime, backend, args.clif)
         for bench in run_bench:
-            print('\tBenchmark: ', bench)
+            print('\tBenchmark run: ', bench)
             mean, sigma = mean_sigma(env,
                                      bench,
                                      args.num_obs,
@@ -115,7 +115,7 @@ if __name__ == '__main__':
             result = format_result(mean, error)
             run_results[bench_code] = result
         for bench in build_bench:
-            print('\tBenchmark: ', bench)
+            print('\tBenchmark build: ', bench)
             mean, sigma = mean_sigma(env,
                                      bench,
                                      args.num_obs,
@@ -127,4 +127,3 @@ if __name__ == '__main__':
             build_results[bench_code] = result
     generate_table(args.template, 'run', run_results)
     generate_table(args.template, 'build', build_results)
-
