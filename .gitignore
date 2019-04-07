@@ -105,4 +105,4 @@ venv.bak/
 
 /multitime/
 /benchmarks/*/Cargo.lock
-*_template_result.tex
+*_benchmark_result.tex

@@ -28,6 +28,7 @@ git checkout 1fc1fbef93456ac2444479073b36e7d4a9f44b58
 ./prepare.sh
 ./test.sh --release
 cd -
+
 # Build the IronOx backend.
 git clone https://github.com/gabi-250/rust.git || true
 cd rust
@@ -35,4 +36,4 @@ git checkout ironox-backend-v0.1
 sh ./build_ironox.sh
 cd -
 
-python3 run_benchmarks.py --multitime ./multitime/multitime --rust ./rust --clif ./rustc_codegen_cranelift --template template.tex --benchmarks ./benchmarks
+python3 run_benchmarks.py --multitime ./multitime/multitime --rust ./rust --clif ./rustc_codegen_cranelift --template benchmark.tex --benchmarks ./benchmarks
