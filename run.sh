@@ -8,9 +8,9 @@ rustup -V >/dev/null || curl https://sh.rustup.rs -sSf | sh
 # Build multitime.
 git clone https://github.com/ltratt/multitime.git || true
 cd multitime
- make -f Makefile.bootstrap
- ./configure
- make
+make -f Makefile.bootstrap
+./configure
+make
 cd -
 
 # Build the Cranelift backend.
